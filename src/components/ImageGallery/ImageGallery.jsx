@@ -4,7 +4,7 @@ import ImageCard from "../ImageCard/ImageCard";
 
 export default function ImageGallery({ items, onImageClick }) {
   if (items.length === 0) {
-    return; // Повертаємо null, якщо немає завантажених зображень
+    return;
   }
 
   return (
