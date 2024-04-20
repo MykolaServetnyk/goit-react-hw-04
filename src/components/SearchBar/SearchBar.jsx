@@ -8,7 +8,6 @@ export default function SearchBar({ onSubmit }) {
   const onSubmitBar = (event) => {
     event.preventDefault();
     const form = event.target;
-    console.log(form.elements.topic.value);
     const data = form.elements.topic.value;
     if (data === "") {
       toast.error("Please, enter your request!");
