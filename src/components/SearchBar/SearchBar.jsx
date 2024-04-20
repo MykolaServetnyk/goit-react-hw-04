@@ -28,7 +28,7 @@ export default function SearchBar({ onSubmit }) {
           placeholder="Search images and photos"
         />
         <button className={css.btn} type="submit">
-          <AiOutlineSearch /> Search
+          <AiOutlineSearch size='18' /> Search
         </button>
       </form>
     </header>

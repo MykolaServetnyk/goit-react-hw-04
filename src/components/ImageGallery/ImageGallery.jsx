@@ -1,3 +1,4 @@
+// ImageGallery.js
 import React from "react";
 import css from "./ImageGallery.module.css";
 import ImageCard from "../ImageCard/ImageCard";
@@ -8,17 +9,21 @@ export default function ImageGallery({ items, onImageClick }) {
   }
 
   return (
-    <ul className={css.list}>
-      {items.map(({ id, alt_description, urls, likes, user }) => (
-        <li key={id} onClick={() => onImageClick(urls.regular)}>
+    <div className={css.gallery}>
+     <ul className={css.list}>
+      {items.map(({ id, alt_description, urls, likes, user, tags }) => (
+        <li key={id} onClick={() => onImageClick(urls.regular, alt_description, tags, user.name, likes)}>
           <ImageCard
             alt_description={alt_description}
             urls={urls}
             likes={likes}
             user={user}
+            tags={tags}
           />
         </li>
       ))}
-    </ul>
+    </ul> 
+    </div>
+    
   );
 }

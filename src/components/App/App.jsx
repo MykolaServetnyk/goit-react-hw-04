@@ -1,3 +1,4 @@
+// App.js
 import { useState, useEffect } from 'react';
 import { fetchImages } from '../../image-api';
 import SearchBar from '../SearchBar/SearchBar';
@@ -6,7 +7,6 @@ import Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import ImageModal from '../ImageModal/ImageModal';
-
 
 import './App.css';
 
@@ -48,8 +48,8 @@ export default function App() {
     setPage(page + 1);
   };
 
-  const openModal = (imageUrl) => {
-    setSelectedImage(imageUrl);
+  const openModal = (imageUrl, altDescription, imageTags, authorName, likes) => {
+    setSelectedImage({ imageUrl, altDescription, imageTags, authorName, likes });
     setIsOpen(true);
   };
 
@@ -70,7 +70,7 @@ export default function App() {
       <ImageModal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        imageUrl={selectedImage}
+        imageInfo={selectedImage}
       />
     </>
   );

@@ -5,7 +5,7 @@ export default function LoadMoreBtn({ onClick }) {
   return (
     <div className={css.container}>
       <button className={css.btn} onClick={onClick} type="button">
-        <MdOutlineCloudDownload size="18" />
+        <MdOutlineCloudDownload size="20" />
         Load more
       </button>
     </div>
