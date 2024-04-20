@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./SearchBar.module.css";
 import { AiOutlineSearch } from "react-icons/ai";
 

@@ -1,5 +1,3 @@
-// ImageGallery.js
-import React from "react";
 import css from "./ImageGallery.module.css";
 import ImageCard from "../ImageCard/ImageCard";
 
