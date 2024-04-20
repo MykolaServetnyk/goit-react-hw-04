@@ -1,13 +1,15 @@
 import React from "react";
 import css from "./SearchBar.module.css";
 import { AiOutlineSearch } from "react-icons/ai";
-import toast from "react-hot-toast";
+
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function SearchBar({ onSubmit }) {
   const onSubmitBar = (event) => {
     event.preventDefault();
     const form = event.target;
-    const data = form.elements.topic.value.trim();
+    console.log(form.elements.topic.value);
+    const data = form.elements.topic.value;
     if (data === "") {
       toast.error("Please, enter your request!");
       return;
@@ -16,7 +18,8 @@ export default function SearchBar({ onSubmit }) {
     form.reset();
   };
 
-  return (
+  return (<div>
+    <div><Toaster/></div>
     <header className={css.header}>
       <form className={css.form} onSubmit={onSubmitBar}>
         <input
@@ -32,5 +35,7 @@ export default function SearchBar({ onSubmit }) {
         </button>
       </form>
     </header>
+  </div>
+    
   );
 }
